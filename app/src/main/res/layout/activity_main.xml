@@ -3,108 +3,97 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtDolar"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="68dp"
-        android:text="Dolares"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/tvDolar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Dolar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etDolar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDolar" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDolar"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/txtEuros"
-        android:layout_width="146dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/tvEuros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Euros"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDolar" />
+        app:layout_constraintTop_toBottomOf="@+id/etDolar"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/etEuros"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEuros" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEuros"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/tvCambio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:text="Cmbio a:"
+        app:layout_constraintTop_toTopOf="@+id/etEuros" />
 
     <RadioGroup
-        android:id="@+id/rgOpciones"
-        android:layout_width="215dp"
-        android:layout_height="117dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="36dp"
+        android:id="@+id/rbOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEuros">
-
-        <RadioButton
-            android:id="@+id/rbEuros"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Euros a Dolar"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="420dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCambio">
 
         <RadioButton
             android:id="@+id/rbDolar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dolar a Euros"
-            tools:layout_editor_absoluteX="97dp"
-            tools:layout_editor_absoluteY="494dp" />
+            android:text="De Dolar  Euros" />
+
+        <RadioButton
+            android:id="@+id/rbEuros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="De Euros a  Dolar" />
 
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/tvCambiar"
-        android:layout_width="192dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Cambiar a:"
-        app:layout_constraintBottom_toTopOf="@+id/tvResultado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgOpciones"
-        app:layout_constraintVertical_bias="0.144" />
-
     <Button
         android:id="@+id/btConvertir"
-        android:layout_width="162dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="664dp"
-        android:text="Convertidor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Convertir"
+        app:layout_constraintTop_toBottomOf="@+id/rbOpciones"
+        tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:id="@+id/tvResultado"
-        android:layout_width="146dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/btConvertir"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:text="Resultado"
+        app:layout_constraintTop_toBottomOf="@+id/btConvertir"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

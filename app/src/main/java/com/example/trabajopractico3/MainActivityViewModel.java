@@ -14,9 +14,10 @@ public class MainActivityViewModel extends ViewModel {
     private MutableLiveData<Boolean> estadoETD;
 
 
+
     public LiveData<Boolean> getEstadoETE(){
         if(estadoETE==null){
-            estadoETD=new MutableLiveData<>();
+            estadoETE=new MutableLiveData<>();
         }
         return estadoETE;
     }
@@ -35,7 +36,7 @@ public class MainActivityViewModel extends ViewModel {
         return convertidor;
     }
 
-    public void cambiarEstado(int idView, int rbDolar, int rbEuros){
+    public void cambiarEstadoET(int idView, int rbDolar, int rbEuros){
       if(idView==rbDolar){
           estadoETD.setValue(true);
           estadoETE.setValue(false);
@@ -49,8 +50,8 @@ public class MainActivityViewModel extends ViewModel {
 
         if(rbDolar){
          Double dolar = Double.parseDouble(etDolar);
-         Double resultado= (dolar*91.41);
-         convertidor.setValue(resultado+" dolares");
+         Double resultado1= (dolar*91.41);
+         convertidor.setValue(resultado1+" dolares");
         }else {
         Double euros = Double.parseDouble(etEuros);
         Double resultado= (euros*107.97);

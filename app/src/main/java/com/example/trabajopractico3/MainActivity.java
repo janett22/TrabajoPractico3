@@ -9,14 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 private MainActivityViewModel vm;
-private EditText etDolar,etEuros,etResultdo;
+private EditText etDolar,etEuros;
 private Button btConvertir;
 private RadioButton rbDolar,rbEuros;
 private TextView tvResultado;
+private RadioGroup rbOpciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,9 @@ private TextView tvResultado;
         etEuros = findViewById(R.id.etEuros);
         tvResultado = findViewById(R.id.tvResultado);
         btConvertir = findViewById(R.id.btConvertir);
-        rbDolar= findViewById(R.id.rbDolar);
-        rbEuros= findViewById(R.id.rbEuros);
+        rbDolar = findViewById(R.id.rbDolar);
+        rbEuros = findViewById(R.id.rbEuros);
+        rbOpciones = findViewById(R.id.rbOpciones);
         vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 
         vm.getEstadoETD().observe(this, new Observer<Boolean>() {
@@ -63,9 +66,8 @@ private TextView tvResultado;
           }
 
 
-      public void cambiar(View v){
-          vm.cambiarEstado(v.getId(),rbDolar.getId(),rbEuros.getId());
-
+      public void cambiarEstadoET(View v){
+          vm.cambiarEstadoET(v.getId(),rbDolar.getId(),rbEuros.getId());
         }
 
     }
